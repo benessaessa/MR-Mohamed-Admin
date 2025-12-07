@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>الملف الشخصي - المعلم</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- aos library and animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex" href="teacher-dashboard.html">
+                <img src="images/logo.png" class="navbar-img" alt="">
+                <div class="d-lg-none d-flex align-items-center ms-3">
+                    <div class="theme-switch">
+                        <input type="checkbox" id="darkModeToggle" />
+                        <label for="darkModeToggle" class="switch-label">
+                            <span class="icon sun"><i class="fas fa-sun"></i></span>
+                            <span class="icon moon"><i class="fas fa-moon"></i></span>
+                        </label>
+                    </div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <!-- Dark mode toggle -->
+                <div class="d-lg-flex d-none align-items-center ms-3">
+                    <div class="theme-switch">
+                        <input type="checkbox" id="darkModeToggle" />
+                        <label for="darkModeToggle" class="switch-label">
+                            <span class="icon sun"><i class="fas fa-sun"></i></span>
+                            <span class="icon moon"><i class="fas fa-moon"></i></span>
+                        </label>
+                    </div>
+                </div>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2 align-items-lg-center align-items-start pt-3 pt-lg-0">
+                    <!-- Notifications dropdown -->
+                    <div class="d-lg-none d-block">
+                        <li class="nav-item mb-3">
+                        <a href="teacher-dashboard.html" title="الرئيسية" class="nav-link">
+                            <i class="fas fa-home me-2"></i>
+                            <span> الرئيسية</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-3">
+                        <a href="teacher-users.html" title="إدارة المستخدمين" class="nav-link text-dark">
+                        <i class="fas fa-users me-2"></i>
+                        <span>إدارة المستخدمين</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-3">
+                        <a href="teacher-my-courses.html" title="كورساتي" class="nav-link">
+                            <i class="fas fa-graduation-cap me-2"></i>
+                            <span>كورساتي</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-3">
+                        <a href="teacher-courses.html" title="إدارة الكورسات" class="nav-link">
+                            <i class="fas fa-book me-2"></i>
+                            <span>إدارة الكورسات</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-3">
+                        <a href="teacher-requests.html" title="طلبات الكورسات" class="nav-link">
+                            <i class="fas fa-edit me-2"></i>
+                            <span>طلبات الكورسات</span>
+                        </a>
+                    </li>
+                    </div>
+                    <a href="teacher-profile.html" class="text-decoration-none">
+                        <li class="custom-badge d-flex align-items-center">
+                            <span class="ms-2">0 جنيه</span>
+                            <div class="icon-circle">
+                                <i class="fas fa-wallet"></i>
+                            </div>
+                        </li>
+                    </a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link position-relative" href="#" id="notificationsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="الإشعارات">
+                            <i class="fas fa-bell fs-3"></i>
+                            <!-- <span class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-danger">3</span> -->
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationsDropdown">
+                            <li><h6 class="dropdown-header">الإشعارات</h6></li>
+                            <li><a class="dropdown-item" href="#">طلب كورس جديد</a></li>
+                            <li><a class="dropdown-item" href="#">تم الاشتراك في كورسك</a></li>
+                            <li><a class="dropdown-item" href="#">تذكير بدفع المحفظة</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-center" href="teacher-notifications.html">عرض كل الإشعارات</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Profile dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link d-flex align-items-center" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="الملف الشخصي">
+                            <i class="fa fa-user-circle fs-3"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                            <li><a class="dropdown-item" href="teacher-profile.html"><i class="fas fa-user me-2"></i>الملف الشخصي</a></li>
+
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="logout.html"><i class="fas fa-sign-out-alt me-2"></i>تسجيل الخروج</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <nav class="sidebar shadow-sm fixed-top pt-5" id="sidebar">
+        <div class="pt-4">
+            <!-- Toggle Button -->
+            <button id="toggleSidebar" class="btn ms-3 me-3 mb-3 mt-3 z-3 p-2 d-flex align-items-center" aria-label="Toggle sidebar">
+                <!-- left icon (hidden by default) -->
+                <i class="d-none" id="toggleIconLeft" aria-hidden="true"></i>
+                <span class="sidebar-text">تصغير القائمة</span>
+                <!-- right/expand icons -->
+                <i class="fas fa-angle-double-right ms-2" id="toggleIconRight" aria-hidden="true"></i>
+                <i class="fas fa-angle-double-left ms-2 d-none" id="toggleIconBothLeft" aria-hidden="true"></i>
+            </button>
+            <ul class="nav flex-column">
+            <li class="nav-item mb-3">
+                <a href="teacher-dashboard.html" title="الرئيسية" class="nav-link text-dark">
+                <i class="fas fa-home me-2"></i>
+                <span> الرئيسية</span>
+                </a>
+            </li>
+            <li class="nav-item mb-3">
+                <a href="teacher-users.html" title="إدارة المستخدمين" class="nav-link text-dark">
+                <i class="fas fa-users me-2"></i>
+                <span>إدارة المستخدمين</span>
+                </a>
+            </li>
+            <li class="nav-item mb-3">
+                <a href="teacher-roles.html" title="إدارة الأدوار" class="nav-link text-dark">
+                <i class="fas fa-user-shield me-2"></i>
+                <span>إدارة الأدوار</span>
+                </a>
+            </li>
+            <li class="nav-item mb-3">
+                <a href="teacher-my-courses.html" title="كورساتي" class="nav-link text-dark">
+                <i class="fas fa-graduation-cap me-2"></i>
+                <span>كورساتي</span>
+                </a>
+            </li>
+            <li class="nav-item mb-3">
+                <a href="teacher-courses.html" title="إدارة الكورسات" class="nav-link text-dark">
+                <i class="fas fa-book me-2"></i>
+                <span>إدارة الكورسات</span>
+                </a>
+            </li>
+            <li class="nav-item mb-3">
+                <a href="teacher-requests.html" title="طلبات الكورسات" class="nav-link text-dark">
+                <i class="fas fa-edit me-2"></i>
+                <span>طلبات الكورسات</span>
+                </a>
+            </li>
+            <li class="nav-item mb-3">
+                <a href="teacher-profile.html" title="الملف الشخصي" class="nav-link text-dark active">
+                <i class="fas fa-user me-2"></i>
+                <span>الملف الشخصي</span>
+                </a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="main-content">
+        <div class="container-fluid pt-5 mt-4">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card card-profile mb-4">
+                        <div class="card-body text-center">
+                            <p class="text-center">
+                                <i class="fa fa-user-circle fa-4x text-primary"></i>
+                            </p>
+                            <h6 class="card-title fw-bold">أحمد محمد</h6>
+                            <p class="card-text fs-12 text-secondary">معلم منذ 30 يوم</p>
+                            <p class="card-text fs-12 mb-2">
+                                <span class="text-secondary">رقم الهاتف:</span>
+                                <span class="fw-bold">0123456789</span>
+                            </p>
+                            <p class="card-text fs-12 border-bottom pb-3 mb-2">
+                                <span class="text-secondary">البريد الإلكتروني:</span>
+                                <span class="fw-bold">ahmed@example.com</span>
+                            </p>
+                             <ul class="nav nav-tabs flex-column gap-2 border-0"
+                                id="profileTab"
+                                role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active w-100 text-start align-items-center d-flex"
+                                        id="overview-tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#overview"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="overview"
+                                        aria-selected="true">
+                                        <i class="fas fa-chart-bar me-2"></i>
+                                        <span class="fs-14">الملف الشخصي</span>
+                                        <i class="fas fa-chevron-left ms-auto"></i>
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link w-100 text-start align-items-center d-flex"
+                                        id="earnings-tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#earnings"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="earnings"
+                                        aria-selected="false">
+                                        <i class="fas fa-dollar-sign me-2"></i>
+                                        <span class="fs-14">الإيرادات والمحفظة</span>
+                                        <i class="fas fa-chevron-left ms-auto"></i>
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link w-100 text-start align-items-center d-flex"
+                                        id="courses-tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#courses"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="courses"
+                                        aria-selected="false">
+                                        <i class="fas fa-graduation-cap me-2"></i>
+                                        <span class="fs-14">إدارة الكورسات</span>
+                                        <i class="fas fa-chevron-left ms-auto"></i>
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link w-100 text-start align-items-center d-flex"
+                                        id="students-tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#students"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="students"
+                                        aria-selected="false">
+                                        <i class="fas fa-users me-2"></i>
+                                        <span class="fs-14">إدارة الطلاب</span>
+                                        <i class="fas fa-chevron-left ms-auto"></i>
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link w-100 text-start align-items-center d-flex"
+                                        id="settings-tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#settings"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="settings"
+                                        aria-selected="false">
+                                        <i class="fas fa-user-shield me-2"></i>
+                                        <span class="fs-14">الأمان وتسجيل الدخول</span>
+                                        <i class="fas fa-chevron-left ms-auto"></i>
+                                    </button>
+                                </li>
+                             </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="tab-content tabs-profile" id="profileTabContent">
+                        <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">معلومات شخصية</h5>
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="firstName" class="form-label">الاسم الأول</label>
+                                                <input type="text" class="form-control" id="firstName" value="أحمد" readonly>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="lastName" class="form-label">الاسم الأخير</label>
+                                                <input type="text" class="form-control" id="lastName" value="محمد" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="birthDate" class="form-label">تاريخ الميلاد</label>
+                                                <input type="date" class="form-control" id="birthDate" value="1990-01-01" readonly>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="gender" class="form-label">الجنس</label>
+                                                <select class="form-select" id="gender" disabled>
+                                                    <option value="male" selected>ذكر</option>
+                                                    <option value="female">أنثى</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="specialization" class="form-label">التخصص</label>
+                                            <input type="text" class="form-control" id="specialization" value="رياضيات وعلوم" readonly>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="bio" class="form-label">السيرة الذاتية</label>
+                                            <textarea class="form-control" id="bio" rows="4" readonly>معلم متخصص في الرياضيات والعلوم مع خبرة تزيد عن 10 سنوات في التعليم. حاصل على درجة الماجستير في الرياضيات التطبيقية.</textarea>
+                                        </div>
+                                        <button type="button" class="btn btn-primary" onclick="enableEdit()">تعديل المعلومات</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">الإحصائيات</h5>
+                                    <div class="row">
+                                        <div class="col-md-3 mb-3">
+                                            <div class="card bg-primary text-white">
+                                                <div class="card-body text-center">
+                                                    <h4>15</h4>
+                                                    <p>كورس منشور</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <div class="card bg-success text-white">
+                                                <div class="card-body text-center">
+                                                    <h4>250</h4>
+                                                    <p>طالب مسجل</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <div class="card bg-warning text-white">
+                                                <div class="card-body text-center">
+                                                    <h4>4.8</h4>
+                                                    <p>متوسط التقييم</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <div class="card bg-info text-white">
+                                                <div class="card-body text-center">
+                                                    <h4>5000</h4>
+                                                    <p>إجمالي الإيرادات (جنيه)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="earnings" role="tabpanel" aria-labelledby="earnings-tab">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">المحفظة والإيرادات</h5>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="card bg-primary text-white mb-3">
+                                                <div class="card-body">
+                                                    <h4>0 جنيه</h4>
+                                                    <p>الرصيد الحالي</p>
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-success w-100">سحب الأموال</button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-success text-white mb-3">
+                                                <div class="card-body">
+                                                    <h4>5000 جنيه</h4>
+                                                    <p>إجمالي الإيرادات</p>
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-outline-primary w-100">عرض تفاصيل الإيرادات</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">سجل الإيرادات</h5>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>التاريخ</th>
+                                                    <th>المبلغ</th>
+                                                    <th>المصدر</th>
+                                                    <th>الحالة</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>2025-03-15</td>
+                                                    <td>500 جنيه</td>
+                                                    <td>كورس الرياضيات</td>
+                                                    <td><span class="badge bg-success">مكتمل</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2025-03-10</td>
+                                                    <td>750 جنيه</td>
+                                                    <td>كورس العلوم</td>
+                                                    <td><span class="badge bg-success">مكتمل</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="courses" role="tabpanel" aria-labelledby="courses-tab">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">إدارة الكورسات</h5>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>اسم الكورس</th>
+                                                    <th>عدد الطلاب</th>
+                                                    <th>التقييم</th>
+                                                    <th>الحالة</th>
+                                                    <th>الإجراءات</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>الرياضيات المتقدمة</td>
+                                                    <td>45</td>
+                                                    <td>4.9</td>
+                                                    <td><span class="badge bg-success">نشط</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary me-1">تعديل</button>
+                                                        <button class="btn btn-sm btn-danger">حذف</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>أساسيات الفيزياء</td>
+                                                    <td>32</td>
+                                                    <td>4.7</td>
+                                                    <td><span class="badge bg-success">نشط</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary me-1">تعديل</button>
+                                                        <button class="btn btn-sm btn-danger">حذف</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <button class="btn btn-primary mt-3">إضافة كورس جديد</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="students" role="tabpanel" aria-labelledby="students-tab">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">إدارة الطلاب</h5>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>اسم الطالب</th>
+                                                    <th>الكورسات المسجلة</th>
+                                                    <th>تاريخ التسجيل</th>
+                                                    <th>الحالة</th>
+                                                    <th>الإجراءات</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>محمد أحمد</td>
+                                                    <td>الرياضيات المتقدمة</td>
+                                                    <td>2025-03-01</td>
+                                                    <td><span class="badge bg-success">نشط</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-info me-1">عرض</button>
+                                                        <button class="btn btn-sm btn-warning">إيقاف</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>فاطمة علي</td>
+                                                    <td>أساسيات الفيزياء</td>
+                                                    <td>2025-02-28</td>
+                                                    <td><span class="badge bg-success">نشط</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-info me-1">عرض</button>
+                                                        <button class="btn btn-sm btn-warning">إيقاف</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">الأمان وتسجيل الدخول</h5>
+                                    <div class="text-center">
+                                        <h6>عدد مرات تسجيل الخروج خلال اليوم</h6>
+                                        <h6 class="fw-bold bg-danger rounded-pill text-center p-2">لم يتم تسجيل الخروج بواسطة المستخدم اليوم</h6>
+                                        <h6>عدد مرات تسجيل الخروج خلال الأسبوع</h6>
+                                        <h6 class="fw-bold bg-danger rounded-pill text-center p-2">لم يتم تسجيل الخروج بواسطة المستخدم هذا الأسبوع</h6>
+                                        <h6 class="fw-bold bg-warning rounded-pill text-center p-2"> تلقائي من خلال التسجيل في جهاز آخر <span class="bg-white text-black rounded-circle px-2">1</span>   مرة واحدة </h6>
+                                    </div>
+                                    <div class="table-responsive pb-2 pt-3">
+                                        <table class="table table-borderless">
+                                            <thead class="border-bottom">
+                                                <tr>
+                                                    <th scope="row">نوع الجهاز	</th>
+                                                    <th> اسم الجهاز		</th>
+                                                    <th> نظام التشغيل		</th>
+                                                    <th> المتصفح	</th>
+                                                    <th> اخر نشاط		</th>
+                                                    <th> تاريخ تسجيل الدخول	</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="table-group-divider">
+                                                <tr>
+                                                    <td scope="row">Desktop</td>
+                                                    <td>Unknown</td>
+                                                    <td>Windows 10	</td>
+                                                    <td>Chrome 142	</td>
+                                                    <td>02:00 الخميس، ١ يناير ١٩٧٠</td>
+                                                    <td>22:10 السبت، ١٥ نوفمبر ٢٠٢٥</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer p-4">
+        <div class="container-fluid pt-4">
+            <div class="row justify-content-between">
+                <div class="col-lg-6 col-md-6"><img src="images/logo.png" alt="img" height="65px">
+                    <p class="pt-4 smallText">
+                        منصة تعليمية تهدف الي تعليم الطلاب بأحدث الطرق الحديثة وابسطها
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-5">
+                    <p class="smallText mb-2">تواصل معنا من خلال</p>
+                    <p class="socials">
+                        <a class="text-decoration-none px-1" href="" target="_blank" rel="noreferrer">
+                            <i class="fab fs-4 fa-facebook-square"></i>
+                        </a>
+                        <a class="text-decoration-none px-1" href="" target="_blank" rel="noreferrer">
+                            <i class="fab fs-4 fa-whatsapp"></i>
+                        </a>
+                        <a class="text-decoration-none px-1" href="" target="_blank" rel="noreferrer">
+                            <i class="fab fs-4 fa-youtube-square"></i>
+                        </a>
+                        <a class="text-decoration-none px-1" href="" target="_blank" rel="noreferrer">
+                            <i class="fab fs-4 fa-instagram"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="row border-top mt-4 linkFooter border-secondary justify-content-between text-start">
+                <div class="col-lg-6 col-md-5">
+                    <p class="pt-3 d-none d-md-block">جميع الحقوق محفوظة &copy;
+                        <a href="https://www.facebook.com/mohamed.essa.abdelhamead/">Mohamed Essa</a>
+                    </p>
+                </div>
+                <div class="col-lg-5 col-md-6 pt-3">
+                    <div class="d-flex justify-content-end">
+                        <div>
+                            <a class="text-decoration-none px-2" href="/privacy-policy">الخصوصية</a>
+                            <a class="text-decoration-none px-2" href="/terms">الشروط والأحكام</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="js/file.js"></script>
+    <script>
+        AOS.init();
+
+        function enableEdit() {
+            const inputs = document.querySelectorAll('#overview input, #overview select, #overview textarea');
+            inputs.forEach(input => {
+                input.removeAttribute('readonly');
+                input.removeAttribute('disabled');
+            });
+            document.querySelector('#overview button').textContent = 'حفظ التغييرات';
+            document.querySelector('#overview button').onclick = saveChanges;
+        }
+
+        function saveChanges() {
+            // Here you would typically send the data to the server
+            alert('تم حفظ التغييرات بنجاح!');
+            const inputs = document.querySelectorAll('#overview input, #overview select, #overview textarea');
+            inputs.forEach(input => {
+                input.setAttribute('readonly', '');
+                if (input.tagName === 'SELECT') {
+                    input.setAttribute('disabled', '');
+                }
+            });
+            document.querySelector('#overview button').textContent = 'تعديل المعلومات';
+            document.querySelector('#overview button').onclick = enableEdit;
+        }
+    </script>
+
+</html>
