@@ -294,4 +294,9 @@ input:checked + .switch-label::after {
         padding: 0;
     }
 }
-
+@media screen and (max-width:992px) {
+  .navbar .navbar-nav{
+    height: 84vh;
+    overflow: auto;
+  }
+}
