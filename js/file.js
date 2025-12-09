@@ -444,3 +444,24 @@ document.addEventListener("DOMContentLoaded", function () {
       ).hide();
     });
 });
+
+// Delete lecture
+function deleteLecture(button) {
+  const lectureId = button.getAttribute("data-lecture-id");
+  document.getElementById("confirmDeleteLecture").setAttribute("data-lecture-id", lectureId);
+  new bootstrap.Modal(document.getElementById("deleteLectureModal")).show();
+}
+
+// Confirm delete lecture
+document.addEventListener("DOMContentLoaded", function () {
+  const confirmDeleteLectureBtn = document.getElementById("confirmDeleteLecture");
+  if (confirmDeleteLectureBtn) {
+    confirmDeleteLectureBtn.addEventListener("click", function () {
+      const lectureId = this.getAttribute("data-lecture-id");
+      // Here you would implement the actual deletion logic, e.g., remove the row or send to server
+      console.log("Deleting lecture with ID:", lectureId);
+      // For now, just hide the modal
+      bootstrap.Modal.getInstance(document.getElementById("deleteLectureModal")).hide();
+    });
+  }
+});
