@@ -213,7 +213,9 @@ p {
     color: var(--bg-color-main) !important;
     text-decoration: none;
 }
-
+.dark-mode .linkColor{
+    color: var(--color-white) !important;
+}
 .cursor-pointer {
     cursor: pointer;
 }

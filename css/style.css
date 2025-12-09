@@ -101,6 +101,7 @@ label{
   margin-right: 250px;
   transition: margin-right 0.3s ease;
   padding: 20px;
+  min-height: 100vh;
 }
 
 .sidebar.collapsed ~ .main-content {

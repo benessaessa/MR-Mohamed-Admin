@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title> طلبات الكورسات - المعلم</title>
+    <title>التقارير - المعلم</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -181,13 +181,13 @@
                 </a>
             </li>
             <li class="nav-item mb-3">
-                <a href="reports.html" title="التقارير" class="nav-link text-dark">
+                <a href="reports.html" title="التقارير" class="nav-link text-dark active">
                     <i class="fas fa-chart-bar me-2"></i>
                     <span>التقارير</span>
                 </a>
             </li>
             <li class="nav-item mb-3">
-                <a href="teacher-requests.html" title="طلبات الكورسات" class="nav-link text-dark active">
+                <a href="teacher-requests.html" title="طلبات الكورسات" class="nav-link text-dark">
                 <i class="fas fa-edit me-2"></i>
                 <span>طلبات الكورسات</span>
                 </a>
@@ -201,175 +201,143 @@
             </ul>
         </div>
     </nav>
-
     <div class="main-content">
         <!-- End Navbar -->
         <div class="container mt-5 pt-4">
-        <h2 class="mb-4 text-center pt-2">طلبات الكورسات</h2>
-        <!-- Tabs -->
-        <ul class="nav courses-tabs nav-tabs justify-content-center gap-2 pb-3" id="courseTabs" role="tablist">
-            <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="pending-requests-tab" data-bs-toggle="tab" href="#pending-requests" role="tab" aria-controls="pending-requests" aria-selected="true"> طلبات معلقة</a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" id="approved-requests-tab" data-bs-toggle="tab" href="#approved-requests" role="tab" aria-controls="approved-requests" aria-selected="false"> طلبات معتمدة</a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" id="rejected-requests-tab" data-bs-toggle="tab" href="#rejected-requests" role="tab" aria-controls="rejected-requests" aria-selected="false"> طلبات مرفوضة</a>
-            </li>
-        </ul>
+            <div class="card">
+                <div class="card-header d-md-flex justify-content-between align-items-center">
+                    <h3 class="text-titles">التقارير</h3>
+                    <div>
+                        <button class="btn btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#filterModal"><i class="fa fa-filter me-2"></i>تصفية</button>
+                        <button class="btn btn-primary"><i class="fa fa-print me-2"></i>طباعة التقارير </button>
+                    </div>
+                </div>
 
-        <div class="tab-content courses pt-4" id="courseTabsContent">
-            <div class="tab-pane fade show active" id="pending-requests" role="tabpanel" aria-labelledby="pending-requests-tab">
-                <div class="row">
-                    <!-- Pending Requests Content -->
-                    <div class="col-12 mb-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-start mb-3">
-                                    <div>
-                                        <h5 class="card-title mb-1">طلب إنشاء كورس: مراجعة شهر نوفمبر اولي ثانوي</h5>
-                                        <p class="card-text text-muted mb-2">من: أحمد محمد - تاريخ الطلب: 15 مارس 2025</p>
-                                    </div>
-                                    <span class="badge bg-warning">معلق</span>
-                                </div>
-                                <p class="card-text">دورة شاملة تغطي أهم الموضوعات في التاريخ مع شروحات مبسطة وتمارين تطبيقية.</p>
-                                <div class="d-flex gap-2 mt-3">
-                                    <button class="btn btn-success">قبول الطلب</button>
-                                    <button class="btn btn-danger">رفض الطلب</button>
-                                    <button class="btn btn-outline-primary">عرض التفاصيل</button>
-                                </div>
-                            </div>
-                        </div>
+                <div class="card-body">
+                    <!-- Reports Table -->
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead class="table-hover">
+                                <tr>
+                                    <th scope="col">اسم الطالب</th>
+                                    <th scope="col">اسم الكورس</th>
+                                    <th scope="col">اسم المحاضرة</th>
+                                    <th scope="col">رقم التليفون</th>
+                                    <th scope="col">رقم ولي الأمر</th>
+                                    <th scope="col">الحضور</th>
+                                    <th scope="col">درجة الإمتحان</th>
+                                    <th scope="col">درجة الواجب</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Sample Row 1 -->
+                                <tr data-course="رياضيات" data-lecture="الدرس الأول">
+                                    <td>أحمد محمد</td>
+                                    <td>رياضيات</td>
+                                    <td>الدرس الأول</td>
+                                    <td><a href="https://wa.me/201114205243" target="_blank" class="btn btn-sm btn-success"><i class="fab fa-whatsapp"></i> 01114205243</a></td>
+                                    <td><a href="https://wa.me/201114205243" target="_blank" class="btn btn-sm btn-success"><i class="fab fa-whatsapp"></i> 01114205243</a></td>
+                                    <td>حاضر</td>
+                                    <td>85</td>
+                                    <td>90</td>
+                                </tr>
+                                <tr data-course="فيزياء" data-lecture="الدرس الثاني">
+                                    <td>فاطمة علي</td>
+                                    <td>فيزياء</td>
+                                    <td>الدرس الثاني</td>
+                                    <td><a href="https://wa.me/201112223334" target="_blank" class="btn btn-sm btn-success"><i class="fab fa-whatsapp"></i> 01112223334</a></td>
+                                    <td><a href="https://wa.me/201155556667" target="_blank" class="btn btn-sm btn-success"><i class="fab fa-whatsapp"></i> 01155556667</a></td>
+                                    <td>حاضر</td>
+                                    <td>92</td>
+                                    <td>88</td>
+                                </tr>
+                                <tr data-course="كيمياء" data-lecture="الدرس الثالث">
+                                    <td>محمد حسن</td>
+                                    <td>كيمياء</td>
+                                    <td>الدرس الثالث</td>
+                                    <td><a href="https://wa.me/201177778889" target="_blank" class="btn btn-sm btn-success"><i class="fab fa-whatsapp"></i> 01177778889</a></td>
+                                    <td><a href="https://wa.me/201199990001" target="_blank" class="btn btn-sm btn-success"><i class="fab fa-whatsapp"></i> 01199990001</a></td>
+                                    <td>غائب</td>
+                                    <td>78</td>
+                                    <td>85</td>
+                                </tr>
+                                <tr data-course="رياضيات" data-lecture="الدرس الأول">
+                                    <td>سارة أحمد</td>
+                                    <td>رياضيات</td>
+                                    <td>الدرس الأول</td>
+                                    <td><a href="https://wa.me/201122334455" target="_blank" class="btn btn-sm btn-success"><i class="fab fa-whatsapp"></i> 01122334455</a></td>
+                                    <td><a href="https://wa.me/201166778899" target="_blank" class="btn btn-sm btn-success"><i class="fab fa-whatsapp"></i> 01166778899</a></td>
+                                    <td>حاضر</td>
+                                    <td>95</td>
+                                    <td>92</td>
+                                </tr>
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="col-12 mb-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-start mb-3">
-                                    <div>
-                                        <h5 class="card-title mb-1">طلب إنشاء كورس: أساسيات البرمجة</h5>
-                                        <p class="card-text text-muted mb-2">من: فاطمة علي - تاريخ الطلب: 12 مارس 2025</p>
-                                    </div>
-                                    <span class="badge bg-warning">معلق</span>
-                                </div>
-                                <p class="card-text">دورة تعليمية شاملة للمبتدئين في البرمجة تغطي المفاهيم الأساسية والتطبيقات العملية.</p>
-                                <div class="d-flex gap-2 mt-3">
-                                    <button class="btn btn-success">قبول الطلب</button>
-                                    <button class="btn btn-danger">رفض الطلب</button>
-                                    <button class="btn btn-outline-primary">عرض التفاصيل</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Add more pending requests here -->
-                </div>
-            </div>
-            <div class="tab-pane fade" id="approved-requests" role="tabpanel" aria-labelledby="approved-requests-tab">
-                <div class="row">
-                    <!-- Approved Requests Content -->
-                    <div class="col-12 mb-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-start mb-3">
-                                    <div>
-                                        <h5 class="card-title mb-1">طلب إنشاء كورس: الرياضيات المتقدمة</h5>
-                                        <p class="card-text text-muted mb-2">من: محمد أحمد - تاريخ الموافقة: 10 مارس 2025</p>
-                                    </div>
-                                    <span class="badge bg-success">معتمد</span>
-                                </div>
-                                <p class="card-text">دورة متخصصة في الرياضيات المتقدمة للطلاب الجامعيين.</p>
-                                <div class="d-flex gap-2 mt-3">
-                                    <button class="btn btn-outline-primary">عرض الكورس</button>
-                                    <button class="btn btn-outline-secondary">إلغاء الموافقة</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 mb-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-start mb-3">
-                                    <div>
-                                        <h5 class="card-title mb-1">طلب إنشاء كورس: الفيزياء الحديثة</h5>
-                                        <p class="card-text text-muted mb-2">من: سارة خالد - تاريخ الموافقة: 8 مارس 2025</p>
-                                    </div>
-                                    <span class="badge bg-success">معتمد</span>
-                                </div>
-                                <p class="card-text">استكشاف أحدث النظريات في الفيزياء مع تطبيقات عملية.</p>
-                                <div class="d-flex gap-2 mt-3">
-                                    <button class="btn btn-outline-primary">عرض الكورس</button>
-                                    <button class="btn btn-outline-secondary">إلغاء الموافقة</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Add more approved requests here -->
-                </div>
-            </div>
-            <div class="tab-pane fade" id="rejected-requests" role="tabpanel" aria-labelledby="rejected-requests-tab">
-                <div class="row">
-                    <!-- Rejected Requests Content -->
-                    <div class="col-12 mb-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-start mb-3">
-                                    <div>
-                                        <h5 class="card-title mb-1">طلب إنشاء كورس: الطبخ المنزلي</h5>
-                                        <p class="card-text text-muted mb-2">من: لينا حسن - تاريخ الرفض: 5 مارس 2025</p>
-                                    </div>
-                                    <span class="badge bg-danger">مرفوض</span>
-                                </div>
-                                <p class="card-text">سبب الرفض: المحتوى لا يتناسب مع المنهج التعليمي للمنصة.</p>
-                                <div class="d-flex gap-2 mt-3">
-                                    <button class="btn btn-outline-primary">عرض التفاصيل</button>
-                                    <button class="btn btn-outline-warning">إعادة النظر</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 mb-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-start mb-3">
-                                    <div>
-                                        <h5 class="card-title mb-1">طلب إنشاء كورس: التصوير الفوتوغرافي</h5>
-                                        <p class="card-text text-muted mb-2">من: عمر يوسف - تاريخ الرفض: 3 مارس 2025</p>
-                                    </div>
-                                    <span class="badge bg-danger">مرفوض</span>
-                                </div>
-                                <p class="card-text">سبب الرفض: عدم كفاية المحتوى التعليمي والخبرة المطلوبة.</p>
-                                <div class="d-flex gap-2 mt-3">
-                                    <button class="btn btn-outline-primary">عرض التفاصيل</button>
-                                    <button class="btn btn-outline-warning">إعادة النظر</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Add more rejected requests here -->
+
+                    <!-- Pagination -->
+                    <nav aria-label="Reports pagination">
+                        <ul class="pagination justify-content-center pt-4">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">السابق</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">التالي</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Pagination -->
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center mt-4 mb-5">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <!-- Filter Modal -->
+    <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="filterModalLabel">تصفية التقارير</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="filterForm">
+                        <div class="mb-3">
+                            <label for="studentName" class="form-label">اسم الطالب</label>
+                            <input type="text" class="form-control" id="studentName" placeholder="أدخل اسم الطالب">
+                        </div>
+                        <div class="mb-3">
+                            <label for="courseSelect" class="form-label">الكورس</label>
+                            <select class="form-select" id="courseSelect">
+                                <option value="">جميع الكورسات</option>
+                                <option value="رياضيات">رياضيات</option>
+                                <option value="فيزياء">فيزياء</option>
+                                <option value="كيمياء">كيمياء</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="lectureSelect" class="form-label">المحاضرة</label>
+                            <select class="form-select" id="lectureSelect">
+                                <option value="">جميع المحاضرات</option>
+                                <option value="الدرس الأول">الدرس الأول</option>
+                                <option value="الدرس الثاني">الدرس الثاني</option>
+                                <option value="الدرس الثالث">الدرس الثالث</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-outline-primary" id="resetFilter">إعادة تعيين</button>
+                    <button type="button" class="btn btn-primary" id="applyFilter">تطبيق التصفية</button>
+                </div>
+            </div>
+        </div>
     </div>
-    </div>
+
     <!-- Footer -->
     <div class="footer p-4">
         <div class="container-fluid pt-4">
@@ -421,6 +389,50 @@
     <script src="js/file.js"></script>
     <script>
         AOS.init();
+
+        // Filter functionality
+        document.getElementById('applyFilter').addEventListener('click', function() {
+            const studentName = document.getElementById('studentName').value.toLowerCase();
+            const course = document.getElementById('courseSelect').value;
+            const lecture = document.getElementById('lectureSelect').value;
+
+            const rows = document.querySelectorAll('tbody tr');
+
+            rows.forEach(row => {
+                const rowName = row.cells[0].textContent.toLowerCase();
+                const rowCourse = row.getAttribute('data-course');
+                const rowLecture = row.getAttribute('data-lecture');
+
+                const nameMatch = !studentName || rowName.includes(studentName);
+                const courseMatch = !course || rowCourse === course;
+                const lectureMatch = !lecture || rowLecture === lecture;
+
+                if (nameMatch && courseMatch && lectureMatch) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+
+            // Close modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('filterModal'));
+            modal.hide();
+        });
+
+        document.getElementById('resetFilter').addEventListener('click', function() {
+            // Reset form
+            document.getElementById('filterForm').reset();
+
+            // Show all rows
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                row.style.display = '';
+            });
+
+            // Close modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('filterModal'));
+            modal.hide();
+        });
     </script>
-</body>
+
 </html>
