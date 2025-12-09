@@ -23,7 +23,7 @@
     --color-gray-light: #f8f9fa;
     --color-table-header: #d6d7d8;
     --color-table-bodey: #838080;
-    --bg: #000;
+    --color-black: #000000;
     --accent1: #00d4d4;
     --accent2: #7b5cff;
     --fab-bg: rgba(255, 255, 255, 0.06);
@@ -217,7 +217,12 @@ p {
 .cursor-pointer {
     cursor: pointer;
 }
-
+.text-titles{
+    color: var(--color-black);
+}
+.dark-mode .text-titles{
+    color: var(--color-white) !important;
+}
 table th,
 table td {
     border-color: var(--color-primary) !important;

@@ -158,7 +158,7 @@
                     </a>
                 </li>
                 <li class="nav-item mb-3">
-                    <a href="teacher-courses.html" title="إدارة الكورسات" class="nav-link text-dark">
+                    <a href="teacher-courses.html" title="إدارة الكورسات" class="nav-link text-dark active">
                         <i class="fas fa-book me-2"></i>
                         <span>إدارة الكورسات</span>
                     </a>
@@ -187,6 +187,45 @@
                 <div class="col-lg-12">
                     <div class="card mb-4">
                         <img id="courseVideo" class="card-img-top" src="images/home.webp" alt="Course Image">
+                        <div class="card-body">
+                            <h1 class="card-title fw-bold mb-3 d-lg-flex justify-content-between">مراجعة شهر نوفمبر اولي ثانوي
+                                <button onclick="playVideo()" class="btn btn-primary btn-sm px-5">
+                                مشاهدة الفيديو
+                                </button>
+                            </h1>
+                            <p class="card-text lead">دورة شاملة تغطي أهم الموضوعات مع شروحات مبسطة وتمارين تطبيقية ومراجعات سريعة لتثبيت المعلومات.</p>
+                            <div class="row mb-1 pt-2">
+                                <div class="col-md-6">
+                                    <p><i class="fas fa-user me-2"></i><strong>المعلم:</strong> أحمد محمد</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><i class="fas fa-clock me-2"></i><strong>المدة:</strong> 4 أسابيع</p>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p><i class="fas fa-calendar-alt me-2"></i><strong>تاريخ البدء:</strong> 10 مارس 2025</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><i class="fas fa-users me-2"></i><strong>عدد الطلاب:</strong> 150 طالب</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Content Tabs -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="text-titles">المحاضرات</h3>
+                        </div>
+
+                        <div class="card-body">
+                            <!-- In case Empty Data-->
+                             <div class="text-center py-4">
+                                 <p>لا يوجد لديك محاضرات حالياً</p>
+                                 <button class="btn btn-primary px-5" data-bs-toggle="modal" data-bs-target="#addLectureModal">إضافة محاضرة</button>
+                             </div>
+                        </div>
                     </div>
                 </div>
 
@@ -237,6 +276,53 @@
             </div>
         </div>
     </div>
+
+    <!-- Add Lecture Modal -->
+    <div class="modal fade" id="addLectureModal" tabindex="-1" aria-labelledby="addLectureModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addLectureModalLabel">إضافة محاضرة</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="lecture1Title" class="form-label"> المحاضرة الأولي - شرح*</label>
+                                <input type="text" class="form-control" id="lecture1Title" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lecture2Title" class="form-label">المحاضرة الأولي - شرح جزء تاني</label>
+                                <input type="text" class="form-control" id="lecture2Title">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lecture1File" class="form-label"> ملزمة الدرس الأول*</label>
+                                <input type="file" class="form-control" id="lecture1File" accept=".pdf,.doc,.docx,.ppt,.pptx,.mp4,.avi,.mov" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lecture2File" class="form-label"> ملزمة واجب الدرس الأول</label>
+                                <input type="file" class="form-control" id="lecture2File" accept=".pdf,.doc,.docx,.ppt,.pptx,.mp4,.avi,.mov">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="homework" class="form-label"> فيديو واجب الدرس الأول - شرح </label>
+                                <input type="text" class="form-control" id="homework">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lecture4File" class="form-label"> إجابات كتاب الفصل الأول</label>
+                                <input type="file" class="form-control" id="lecture4File" accept=".pdf,.doc,.docx,.ppt,.pptx,.mp4,.avi,.mov">
+                            </div>
+                        </div>
+                        <div class="border-top pt-3 d-flex justify-content-end gap-2">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                            <button type="submit" class="btn btn-primary" id="saveLectureBtn">حفظ</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -246,10 +332,7 @@
     <script src="js/file.js"></script>
 
     <script>
-        AOS.init();
-        document.addEventListener('DOMContentLoaded', function() {
-            playVideo();
-        });
+        AOS.init(); 
     </script>
 </body>
 </html>

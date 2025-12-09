@@ -2,7 +2,7 @@
 label{
     font-size: .9rem;
     padding-bottom: .2rem;
-    color: var(--color-primary);
+    color: var(--color-gray-dark);
 }
 .navbar-toggler{
     border-color: var(--color-white) !important;
