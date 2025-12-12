@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>الإشعارات - المعلم</title>
+    <title>إدارة الأكواد - المعلم</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -156,167 +156,135 @@
                 <i class="fas fa-angle-double-left ms-2 d-none" id="toggleIconBothLeft" aria-hidden="true"></i>
             </button>
             <ul class="nav flex-column">
-            <li class="nav-item mb-3">
-                <a href="teacher-dashboard.html" title="الرئيسية" class="nav-link text-dark">
-                <i class="fas fa-home me-2"></i>
-                <span> الرئيسية</span>
-                </a>
-            </li>
-            <li class="nav-item mb-3">
-                <a href="teacher-users.html" title="إدارة المستخدمين" class="nav-link text-dark">
-                <i class="fas fa-users me-2"></i>
-                <span>إدارة المستخدمين</span>
-                </a>
-            </li>
-            <li class="nav-item mb-3">
-                <a href="teacher-roles.html" title="إدارة الأدوار" class="nav-link text-dark">
-                <i class="fas fa-user-shield me-2"></i>
-                <span>إدارة الأدوار</span>
-                </a>
-            </li>
-            <li class="nav-item mb-3">
-                <a href="teacher-courses.html" title="إدارة الكورسات" class="nav-link text-dark">
-                <i class="fas fa-book me-2"></i>
-                <span>إدارة الكورسات</span>
-                </a>
-            </li>
-            <li class="nav-item mb-3">
-                <a href="teacher-lectures.html" title="إدارة المحاضرات" class="nav-link text-dark">
-                    <i class="fas fa-book me-2"></i>
-                    <span>إدارة المحاضرات</span>
-                </a>
-            </li>
-            <li class="nav-item mb-3">
-                <a href="reports.html" title="التقارير" class="nav-link text-dark">
-                    <i class="fas fa-chart-bar me-2"></i>
-                    <span>التقارير</span>
-                </a>
-            </li>
-            <li class="nav-item mb-3">
-                <a href="teacher-codes.html" title="الأكواد" class="nav-link text-dark">
-                    <i class="fas fa-code me-2"></i>
-                    <span>الأكواد</span>
-                </a>
-            </li>
-            <li class="nav-item mb-3">
-                <a href="teacher-requests.html" title="طلبات الكورسات" class="nav-link text-dark">
-                <i class="fas fa-edit me-2"></i>
-                <span>طلبات الكورسات</span>
-                </a>
-            </li>
-            <li class="nav-item mb-3">
-                <a href="teacher-profile.html" title="الملف الشخصي" class="nav-link text-dark">
-                <i class="fas fa-user me-2"></i>
-                <span>الملف الشخصي</span>
-                </a>
-            </li>
+                <li class="nav-item mb-3">
+                    <a href="teacher-dashboard.html" title="الرئيسية" class="nav-link text-dark">
+                        <i class="fas fa-home me-2"></i>
+                        <span> الرئيسية</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="teacher-users.html" title="إدارة المستخدمين" class="nav-link text-dark">
+                        <i class="fas fa-users me-2"></i>
+                        <span>إدارة المستخدمين</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="teacher-roles.html" title="إدارة الأدوار" class="nav-link text-dark">
+                        <i class="fas fa-user-shield me-2"></i>
+                        <span>إدارة الأدوار</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="teacher-courses.html" title="إدارة الكورسات" class="nav-link text-dark">
+                        <i class="fas fa-book me-2"></i>
+                        <span>إدارة الكورسات</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="teacher-lectures.html" title="إدارة المحاضرات" class="nav-link text-dark">
+                        <i class="fas fa-book me-2"></i>
+                        <span>إدارة المحاضرات</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="reports.html" title="التقارير" class="nav-link text-dark">
+                        <i class="fas fa-chart-bar me-2"></i>
+                        <span>التقارير</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="teacher-codes.html" title="الأكواد" class="nav-link text-dark active">
+                        <i class="fas fa-code me-2"></i>
+                        <span>الأكواد</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="teacher-requests.html" title="طلبات الكورسات" class="nav-link text-dark">
+                        <i class="fas fa-edit me-2"></i>
+                        <span>طلبات الكورسات</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="teacher-profile.html" title="الملف الشخصي" class="nav-link text-dark">
+                    <i class="fas fa-user me-2"></i>
+                    <span>الملف الشخصي</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
+    
     <div class="main-content">
         <!-- End Navbar -->
-    <div class="container mt-5 pt-4">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2 class="mb-0">الإشعارات</h2>
-            <button class="btn btn-outline-secondary" onclick="markAllAsRead()">
-                <i class="fas fa-check-double me-2"></i>تحديد الكل كمقروء
-            </button>
-        </div>
-        <div class="notifications-list">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <div class="d-flex align-items-start">
-                        <div class="notification-icon me-3">
-                            <i class="fas fa-graduation-cap text-primary"></i>
-                        </div>
-                        <div class="flex-grow-1">
-                            <h6 class="card-title mb-1">طلب كورس جديد</h6>
-                            <p class="card-text mb-2">تم تقديم طلب لإنشاء كورس جديد بعنوان "رياضيات متقدمة". يرجى مراجعته.</p>
-                            <small class="text-muted">منذ 2 ساعات</small>
-                        </div>
-                        <div class="notification-actions">
-                            <button class="btn btn-sm btn-outline-primary me-2">عرض</button>
-                            <button class="btn btn-sm btn-outline-danger">حذف</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <div class="d-flex align-items-start">
-                        <div class="notification-icon me-3">
-                            <i class="fas fa-users text-success"></i>
-                        </div>
-                        <div class="flex-grow-1">
-                            <h6 class="card-title mb-1">تم الاشتراك في كورسك</h6>
-                            <p class="card-text mb-2">قام الطالب محمد أحمد بالاشتراك في كورس "أساسيات الفيزياء".</p>
-                            <small class="text-muted">منذ 5 ساعات</small>
-                        </div>
-                        <div class="notification-actions">
-                            <button class="btn btn-sm btn-outline-primary me-2">عرض</button>
-                            <button class="btn btn-sm btn-outline-danger">حذف</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <div class="d-flex align-items-start">
-                        <div class="notification-icon me-3">
-                            <i class="fas fa-wallet text-warning"></i>
-                        </div>
-                        <div class="flex-grow-1">
-                            <h6 class="card-title mb-1">تذكير بدفع المحفظة</h6>
-                            <p class="card-text mb-2">يرجى دفع المبلغ المستحق في محفظتك لتفعيل الكورسات.</p>
-                            <small class="text-muted">منذ يوم واحد</small>
-                        </div>
-                        <div class="notification-actions">
-                            <button class="btn btn-sm btn-outline-primary me-2">عرض</button>
-                            <button class="btn btn-sm btn-outline-danger">حذف</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <div class="d-flex align-items-start">
-                        <div class="notification-icon me-3">
-                            <i class="fas fa-star text-info"></i>
-                        </div>
-                        <div class="flex-grow-1">
-                            <h6 class="card-title mb-1">تقييم جديد</h6>
-                            <p class="card-text mb-2">حصل كورسك على تقييم 5 نجوم من الطالبة فاطمة علي.</p>
-                            <small class="text-muted">منذ 3 أيام</small>
-                        </div>
-                        <div class="notification-actions">
-                            <button class="btn btn-sm btn-outline-primary me-2">عرض</button>
-                            <button class="btn btn-sm btn-outline-danger">حذف</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Pagination -->
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center mt-4 mb-5">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-    </div>
+        <div class="container mt-5 pt-4">
+            <h5 class="mb-4 fw-bold">إدارة الأكواد</h5>
 
+            <div class="table-responsive">
+                <table id="rolesTable" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>الصف</th>
+                            <th>الكورس</th>
+                            <th>الكود</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rolesTableBody">
+                        <tr>
+                            <td>الأول الثانوي</td>
+                            <td>تاريخ</td>
+                            <td>1234556789</td>
+                        </tr>
+                        <tr>
+                            <td>الثاني الثانوي</td>
+                            <td>تاريخ</td>
+                            <td>1234556789</td>
+                        </tr>
+                        <tr>
+                            <td>الثالث الثانوي</td>
+                            <td>تاريخ</td>
+                            <td>1234556789</td>
+                        </tr>
+                        <tr>
+                            <td>الأول الثانوي</td>
+                            <td>تاريخ</td>
+                            <td>1234556789</td>
+                        </tr>
+                        <tr>
+                            <td>الثاني الثانوي</td>
+                            <td>تاريخ</td>
+                            <td>1234556789</td>
+                        </tr>
+                        <tr>
+                            <td>الثالث الثانوي</td>
+                            <td>تاريخ</td>
+                            <td>1234556789</td>
+                        </tr>
+                        <tr>
+                            <td>الأول الثانوي</td>
+                            <td>تاريخ</td>
+                            <td>1234556789</td>
+                        </tr>
+                        <tr>
+                            <td>الثاني الثانوي</td>
+                            <td>تاريخ</td>
+                            <td>1234556789</td>
+                        </tr>
+                        <tr>
+                            <td>الثالث الثانوي</td>
+                            <td>تاريخ</td>
+                            <td>1234556789</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <nav aria-label="Role table pagination">
+                <ul id="rolePagination" class="pagination justify-content-center">
+                    <!-- Pagination will be generated here -->
+                </ul>
+            </nav>
+        </div>
+    </div>
     <!-- Footer -->
     <div class="footer p-4">
         <div class="container-fluid pt-4">
@@ -368,11 +336,6 @@
     <script src="js/file.js"></script>
     <script>
         AOS.init();
-
-        function markAllAsRead() {
-            // Here you would typically send a request to mark all notifications as read
-            alert('تم تحديد جميع الإشعارات كمقروءة!');
-        }
     </script>
 
 </html>
