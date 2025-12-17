@@ -309,8 +309,9 @@
                             <i class="fas fa-plus me-2"></i>إضافة سؤال
                         </button>
                         <button type="button" class="btn btn-outline-secondary" id="bulkUploadBtn">
-                            <i class="fas fa-upload me-2"></i>رفع أسئلة 
+                            <i class="fas fa-upload me-2"></i>رفع أسئلة
                         </button>
+                        <input type="file" id="questionFileInput" style="display: none;" multiple>
                     </div>
                 </div>
             </div>
@@ -804,6 +805,11 @@
                     questionItem.remove();
                 }
                 bootstrap.Modal.getInstance(document.getElementById('confirmDeleteModal')).hide();
+            });
+
+            // Event listener for bulk upload button
+            document.getElementById('bulkUploadBtn').addEventListener('click', function() {
+                document.getElementById('questionFileInput').click();
             });
         });
     </script>
