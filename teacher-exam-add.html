@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>إدارة الأكواد - المعلم</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- aos library and animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex" href="teacher-dashboard.html">
+                <img src="images/logo.png" class="navbar-img" alt="">
+                <div class="d-lg-none d-flex align-items-center ms-3">
+                    <div class="theme-switch">
+                        <input type="checkbox" id="darkModeToggle" />
+                        <label for="darkModeToggle" class="switch-label">
+                            <span class="icon sun"><i class="fas fa-sun"></i></span>
+                            <span class="icon moon"><i class="fas fa-moon"></i></span>
+                        </label>
+                    </div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <!-- Dark mode toggle -->
+                <div class="d-lg-flex d-none align-items-center ms-3">
+                    <div class="theme-switch">
+                        <input type="checkbox" id="darkModeToggle" />
+                        <label for="darkModeToggle" class="switch-label">
+                            <span class="icon sun"><i class="fas fa-sun"></i></span>
+                            <span class="icon moon"><i class="fas fa-moon"></i></span>
+                        </label>
+                    </div>
+                </div>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2 align-items-lg-center align-items-start pt-3 pt-lg-0">
+                    <!-- Notifications dropdown -->
+                    <div class="d-lg-none d-block">
+                        <li class="nav-item mb-3">
+                        <a href="teacher-dashboard.html" title="الرئيسية" class="nav-link">
+                            <i class="fas fa-home me-2"></i>
+                            <span> الرئيسية</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-3">
+                        <a href="teacher-users.html" title="إدارة المستخدمين" class="nav-link">
+                            <i class="fas fa-users me-2"></i>
+                            <span>إدارة المستخدمين</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-3">
+                        <a href="teacher-roles.html" title="إدارة الأدوار" class="nav-link">
+                            <i class="fas fa-user-shield me-2"></i>
+                            <span>إدارة الأدوار</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-3">
+                        <a href="teacher-courses.html" title="إدارة الكورسات" class="nav-link">
+                            <i class="fas fa-book me-2"></i>
+                            <span>إدارة الكورسات</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-3">
+                        <a href="teacher-lectures.html" title="إدارة المحاضرات" class="nav-link">
+                            <i class="fas fa-book me-2"></i>
+                            <span>إدارة المحاضرات</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-3">
+                        <a href="teacher-exam-list.html" title="الإمتحانات" class="nav-link">
+                            <i class="fas fa-file-alt me-2"></i>
+                            <span>الإمتحانات</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-3">
+                        <a href="reports.html" title="التقارير" class="nav-link">
+                            <i class="fas fa-chart-bar me-2"></i>
+                            <span>التقارير</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-3">
+                        <a href="teacher-codes.html" title="الأكواد" class="nav-link">
+                            <i class="fas fa-code me-2"></i>
+                            <span>الأكواد</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-3">
+                        <a href="teacher-requests.html" title="طلبات الكورسات" class="nav-link">
+                            <i class="fas fa-edit me-2"></i>
+                            <span>طلبات الكورسات</span>
+                        </a>
+                    </li>
+                    </div>
+                    <a href="teacher-profile.html" class="text-decoration-none">
+                        <li class="custom-badge d-flex align-items-center">
+                            <span class="ms-2">0 جنيه</span>
+                            <div class="icon-circle">
+                                <i class="fas fa-wallet"></i>
+                            </div>
+                        </li>
+                    </a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link position-relative" href="#" id="notificationsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="الإشعارات">
+                            <i class="fas fa-bell fs-3"></i>
+                            <!-- <span class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-danger">3</span> -->
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationsDropdown">
+                            <li><h6 class="dropdown-header">الإشعارات</h6></li>
+                            <li><a class="dropdown-item" href="#">طلب كورس جديد</a></li>
+                            <li><a class="dropdown-item" href="#">تم الاشتراك في كورسك</a></li>
+                            <li><a class="dropdown-item" href="#">تذكير بدفع المحفظة</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-center" href="teacher-notifications.html">عرض كل الإشعارات</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Profile dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link d-flex align-items-center" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="الملف الشخصي">
+                            <i class="fa fa-user-circle fs-3"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                            <li><a class="dropdown-item" href="teacher-profile.html"><i class="fas fa-user me-2"></i>الملف الشخصي</a></li>
+
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="login.html"><i class="fas fa-sign-out-alt me-2"></i>تسجيل الخروج</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <nav class="sidebar shadow-sm fixed-top pt-5" id="sidebar">
+        <div class="pt-4">
+            <!-- Toggle Button -->
+            <button id="toggleSidebar" class="btn ms-3 me-3 mb-3 mt-3 z-3 p-2 d-flex align-items-center" aria-label="Toggle sidebar">
+                <!-- left icon (hidden by default) -->
+                <i class="d-none" id="toggleIconLeft" aria-hidden="true"></i>
+                <span class="sidebar-text">تصغير القائمة</span>
+                <!-- right/expand icons -->
+                <i class="fas fa-angle-double-right ms-2" id="toggleIconRight" aria-hidden="true"></i>
+                <i class="fas fa-angle-double-left ms-2 d-none" id="toggleIconBothLeft" aria-hidden="true"></i>
+            </button>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-3">
+                    <a href="teacher-dashboard.html" title="الرئيسية" class="nav-link text-dark">
+                        <i class="fas fa-home me-2"></i>
+                        <span> الرئيسية</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="teacher-users.html" title="إدارة المستخدمين" class="nav-link text-dark">
+                        <i class="fas fa-users me-2"></i>
+                        <span>إدارة المستخدمين</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="teacher-roles.html" title="إدارة الأدوار" class="nav-link text-dark">
+                        <i class="fas fa-user-shield me-2"></i>
+                        <span>إدارة الأدوار</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="teacher-courses.html" title="إدارة الكورسات" class="nav-link text-dark">
+                        <i class="fas fa-book me-2"></i>
+                        <span>إدارة الكورسات</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="teacher-lectures.html" title="إدارة المحاضرات" class="nav-link text-dark">
+                        <i class="fas fa-book me-2"></i>
+                        <span>إدارة المحاضرات</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="teacher-exam-list.html" title="الإمتحانات" class="nav-link text-dark active">
+                        <i class="fas fa-file-alt me-2"></i>
+                        <span>الإمتحانات</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="reports.html" title="التقارير" class="nav-link text-dark">
+                        <i class="fas fa-chart-bar me-2"></i>
+                        <span>التقارير</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="teacher-codes.html" title="الأكواد" class="nav-link text-dark">
+                        <i class="fas fa-code me-2"></i>
+                        <span>الأكواد</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="teacher-requests.html" title="طلبات الكورسات" class="nav-link text-dark">
+                        <i class="fas fa-edit me-2"></i>
+                        <span>طلبات الكورسات</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a href="teacher-profile.html" title="الملف الشخصي" class="nav-link text-dark">
+                    <i class="fas fa-user me-2"></i>
+                    <span>الملف الشخصي</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="main-content">
+        <!-- End Navbar -->
+        <div class="container mt-5 pt-4">
+            <h5 class="mb-4 fw-bold" id="pageTitle">إضافة امتحان جديد</h5>
+
+            <div class="card">
+                <div class="card-body">
+                    <form id="examForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="examName" class="form-label">اسم الامتحان</label>
+                                <input type="text" class="form-control" id="examName" required>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="examClass" class="form-label">الصف</label>
+                                <select class="form-select" id="examClass" required>
+                                    <option value="">اختر الصف</option>
+                                    <option value="الأول الثانوي">الأول الثانوي</option>
+                                    <option value="الثاني الثانوي">الثاني الثانوي</option>
+                                    <option value="الثالث الثانوي">الثالث الثانوي</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="examCourse" class="form-label">الكورس</label>
+                                <select class="form-select" id="examCourse" required>
+                                    <option value="">اختر الكورس</option>
+                                    <option value="تاريخ">تاريخ</option>
+                                    <option value="رياضيات">رياضيات</option>
+                                    <option value="فيزياء">فيزياء</option>
+                                    <option value="كيمياء">كيمياء</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="examLecture" class="form-label">المحاضرة</label>
+                                <select class="form-select" id="examLecture" required>
+                                    <option value="">اختر المحاضرة</option>
+                                    <option value="1">المحاضرة 1</option>
+                                    <option value="2">المحاضرة 2</option>
+                                    <option value="3">المحاضرة 3</option>
+                                    <option value="4">المحاضرة 4</option>
+                                    <option value="5">المحاضرة 5</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="examDate" class="form-label">تاريخ الامتحان</label>
+                                <input type="datetime-local" class="form-control" id="examDate" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="examDuration" class="form-label">مدة الامتحان (بالدقائق)</label>
+                                <input type="number" class="form-control" id="examDuration" min="1" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="examType" class="form-label">نوع النشاط</label>
+                                <select class="form-select" id="examType" required>
+                                    <option value="exam">امتحان</option>
+                                    <option value="homework">واجب منزلي</option>
+                                </select>
+                            </div>
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5 class="mb-0">الأسئلة</h5>
+                </div>
+                <div class="card-body">
+                    <div id="questionsContainer">
+                        <!-- Questions will be added here dynamically -->
+                    </div>
+                    <div class="d-flex gap-2 mt-3">
+                        <button type="button" class="btn btn-outline-primary" id="addQuestionBtn">
+                            <i class="fas fa-plus me-2"></i>إضافة سؤال
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary" id="bulkUploadBtn">
+                            <i class="fas fa-upload me-2"></i>رفع أسئلة 
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+                <a href="teacher-exam-list.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left me-2"></i>العودة لقائمة الامتحانات
+                </a>
+                <button type="button" class="btn btn-success" id="saveExamBtn">
+                    <i class="fas fa-save me-2"></i>حفظ الامتحان
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter Modal -->
+    <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="filterModalLabel">تصفية الإمتحانات</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="filterForm">
+                        <div class="mb-3">
+                            <label for="studentNameFilter" class="form-label">اسم الطالب</label>
+                            <input type="text" class="form-control" id="studentNameFilter" placeholder="أدخل اسم الطالب">
+                        </div>
+                        <div class="mb-3">
+                            <label for="classFilter" class="form-label">الصف</label>
+                            <select class="form-select" id="classFilter">
+                                <option value="">جميع الصفوف</option>
+                                <option value="الأول الثانوي">الأول الثانوي</option>
+                                <option value="الثاني الثانوي">الثاني الثانوي</option>
+                                <option value="الثالث الثانوي">الثالث الثانوي</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="courseFilter" class="form-label">الكورس</label>
+                            <select class="form-select" id="courseFilter">
+                                <option value="">جميع الكورسات</option>
+                                <option value="تاريخ">تاريخ</option>
+                                <option value="رياضيات">رياضيات</option>
+                                <option value="فيزياء">فيزياء</option>
+                                <option value="كيمياء">كيمياء</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-primary" id="applyFilter">تطبيق التصفية</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question Type Selection Modal -->
+    <div class="modal fade" id="questionTypeModal" tabindex="-1" aria-labelledby="questionTypeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="questionTypeModalLabel">اختر نوع السؤال</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-grid gap-3">
+                        <button type="button" class="btn btn-outline-primary btn-lg" id="selectMultipleChoice">
+                            <i class="fas fa-list-ul me-2"></i>اختيار متعدد
+                        </button>
+                        <button type="button" class="btn btn-outline-success btn-lg" id="selectTrueFalse">
+                            <i class="fas fa-check-circle me-2"></i>صح/خطأ
+                        </button>
+                        <button type="button" class="btn btn-outline-info btn-lg" id="selectShortAnswer">
+                            <i class="fas fa-edit me-2"></i>إجابة قصيرة
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationModalLabel">تأكيد</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="confirmationModalBody">
+                    رسالة هنا
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirm Delete Modal -->
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmDeleteModalLabel">تأكيد الحذف</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    هل أنت متأكد من حذف هذا السؤال؟
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteBtn">حذف</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer p-4">
+        <div class="container-fluid pt-4">
+            <div class="row justify-content-between">
+                <div class="col-lg-6 col-md-6"><img src="images/logo.png" alt="img" height="65px">
+                    <p class="pt-4 smallText">
+                        منصة تعليمية تهدف الي تعليم الطلاب بأحدث الطرق الحديثة وابسطها
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-5">
+                    <p class="smallText mb-2">تواصل معنا من خلال</p>
+                    <p class="socials">
+                        <a class="text-decoration-none px-1" href="" target="_blank" rel="noreferrer">
+                            <i class="fab fs-4 fa-facebook-square"></i>
+                        </a>
+                        <a class="text-decoration-none px-1" href="" target="_blank" rel="noreferrer">
+                            <i class="fab fs-4 fa-whatsapp"></i>
+                        </a>
+                        <a class="text-decoration-none px-1" href="" target="_blank" rel="noreferrer">
+                            <i class="fab fs-4 fa-youtube-square"></i>
+                        </a>
+                        <a class="text-decoration-none px-1" href="" target="_blank" rel="noreferrer">
+                            <i class="fab fs-4 fa-instagram"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="row border-top mt-4 linkFooter border-secondary justify-content-between text-start">
+                <div class="col-lg-6 col-md-5">
+                    <p class="pt-3 d-none d-md-block">جميع الحقوق محفوظة &copy;
+                        <a href="https://www.facebook.com/mohamed.essa.abdelhamead/">Mohamed Essa</a>
+                    </p>
+                </div>
+                <div class="col-lg-5 col-md-6 pt-3">
+                    <div class="d-flex justify-content-end">
+                        <div>
+                            <a class="text-decoration-none px-2" href="/privacy-policy">الخصوصية</a>
+                            <a class="text-decoration-none px-2" href="/terms">الشروط والأحكام</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="js/file.js"></script>
+    <script>
+        AOS.init();
+
+        // Question management for exam creation
+        let questionCount = 0;
+
+        function addQuestion(type) {
+            questionCount++;
+            const questionsContainer = document.getElementById('questionsContainer');
+            let questionHTML = '';
+
+            if (type === 'multiple-choice') {
+                questionHTML = `
+                    <div class="question-item border rounded p-3 mb-3" data-question-id="${questionCount}">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h6>سؤال ${questionCount} - اختيار متعدد</h6>
+                            <button type="button" class="btn btn-sm btn-outline-danger" onclick="removeQuestion(${questionCount})">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">نص السؤال</label>
+                            <textarea class="form-control" rows="2" placeholder="أدخل نص السؤال" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">الخيارات</label>
+                            <div class="options-container">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="correct${questionCount}" value="0">
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="الخيار الأول" required>
+                                    <button class="btn btn-outline-danger" type="button" onclick="removeOption(this)">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="correct${questionCount}" value="1">
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="الخيار الثاني" required>
+                                    <button class="btn btn-outline-danger" type="button" onclick="removeOption(this)">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-sm btn-outline-primary" onclick="addOption(${questionCount})">
+                                <i class="fas fa-plus"></i> إضافة خيار
+                            </button>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">الدرجة</label>
+                            <input type="number" class="form-control" min="0" step="0.5" value="1" required>
+                        </div>
+                    </div>
+                `;
+            } else if (type === 'true-false') {
+                questionHTML = `
+                    <div class="question-item border rounded p-3 mb-3" data-question-id="${questionCount}">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h6>سؤال ${questionCount} - صح/خطأ</h6>
+                            <button type="button" class="btn btn-sm btn-outline-danger" onclick="removeQuestion(${questionCount})">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">نص السؤال</label>
+                            <textarea class="form-control" rows="2" placeholder="أدخل نص السؤال" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">الإجابة الصحيحة</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="correct${questionCount}" value="true" checked>
+                                <label class="form-check-label">صح</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="correct${questionCount}" value="false">
+                                <label class="form-check-label">خطأ</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">الدرجة</label>
+                            <input type="number" class="form-control" min="0" step="0.5" value="1" required>
+                        </div>
+                    </div>
+                `;
+            } else if (type === 'short-answer') {
+                questionHTML = `
+                    <div class="question-item border rounded p-3 mb-3" data-question-id="${questionCount}">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h6>سؤال ${questionCount} - إجابة قصيرة</h6>
+                            <button type="button" class="btn btn-sm btn-outline-danger" onclick="removeQuestion(${questionCount})">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">نص السؤال</label>
+                            <textarea class="form-control" rows="2" placeholder="أدخل نص السؤال" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">الإجابة الصحيحة</label>
+                            <input type="text" class="form-control" placeholder="أدخل الإجابة الصحيحة" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">الدرجة</label>
+                            <input type="number" class="form-control" min="0" step="0.5" value="1" required>
+                        </div>
+                    </div>
+                `;
+            }
+
+            questionsContainer.insertAdjacentHTML('beforeend', questionHTML);
+        }
+
+        function removeQuestion(questionId) {
+            // Store the question ID for deletion
+            document.getElementById('confirmDeleteModal').setAttribute('data-question-id', questionId);
+            // Show confirmation modal
+            const modal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'));
+            modal.show();
+        }
+
+        function addOption(questionId) {
+            const questionItem = document.querySelector(`[data-question-id="${questionId}"]`);
+            const optionsContainer = questionItem.querySelector('.options-container');
+            const optionCount = optionsContainer.querySelectorAll('.input-group').length;
+
+            const optionHTML = `
+                <div class="input-group mb-2">
+                    <div class="input-group-text">
+                        <input class="form-check-input" type="radio" name="correct${questionId}" value="${optionCount}">
+                    </div>
+                    <input type="text" class="form-control" placeholder="الخيار ${optionCount + 1}" required>
+                    <button class="btn btn-outline-danger" type="button" onclick="removeOption(this)">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+            `;
+
+            optionsContainer.insertAdjacentHTML('beforeend', optionHTML);
+        }
+
+        function removeOption(button) {
+            const inputGroup = button.closest('.input-group');
+            const optionsContainer = inputGroup.parentElement;
+            const remainingOptions = optionsContainer.querySelectorAll('.input-group');
+
+            if (remainingOptions.length > 2) {
+                inputGroup.remove();
+            } else {
+                // Show confirmation modal with error message
+                document.getElementById('confirmationModalBody').textContent = 'يجب أن يكون هناك خياران على الأقل';
+                const modal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+                modal.show();
+            }
+        }
+
+        // Load exam data for editing
+        function loadExamForEdit() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const editId = urlParams.get('edit');
+            if (editId) {
+                document.getElementById('pageTitle').textContent = 'تعديل الامتحان';
+                const exams = JSON.parse(localStorage.getItem('teacherExams')) || [];
+                const exam = exams.find(e => e.id == editId);
+                if (exam) {
+                    // Fill form fields
+                    document.getElementById('examName').value = exam.name;
+                    document.getElementById('examCourse').value = exam.course;
+                    document.getElementById('examClass').value = exam.class;
+                    document.getElementById('examDate').value = exam.date;
+                    document.getElementById('examDuration').value = exam.duration;
+                    document.getElementById('examType').value = exam.type || '';
+                    document.getElementById('examLecture').value = exam.lecture || '';
+
+                    // Load questions
+                    exam.questions.forEach(question => {
+                        addQuestion(question.type);
+                        const questionItems = document.querySelectorAll('.question-item');
+                        const lastItem = questionItems[questionItems.length - 1];
+
+                        lastItem.querySelector('textarea').value = question.text;
+
+                        if (question.type === 'multiple-choice') {
+                            const options = lastItem.querySelectorAll('.input-group input[type="text"]');
+                            question.options.forEach((option, index) => {
+                                if (options[index]) {
+                                    options[index].value = option.text;
+                                    if (option.isCorrect) {
+                                        lastItem.querySelector(`input[name="correct${questionItems.length}"]`).value = index;
+                                    }
+                                }
+                            });
+                        } else if (question.type === 'true-false') {
+                            lastItem.querySelector(`input[name="correct${questionItems.length}"][value="${question.correctAnswer ? 'true' : 'false'}"]`).checked = true;
+                        } else if (question.type === 'short-answer') {
+                            lastItem.querySelector('input[type="text"]').value = question.correctAnswer;
+                        }
+
+                        lastItem.querySelector('input[type="number"]').value = question.points;
+                    });
+                }
+            }
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            const addQuestionBtn = document.getElementById('addQuestionBtn');
+            const saveExamBtn = document.getElementById('saveExamBtn');
+
+            // Load exam for editing if applicable
+            loadExamForEdit();
+
+            addQuestionBtn.addEventListener('click', function() {
+                // Show question type selection modal
+                const modal = new bootstrap.Modal(document.getElementById('questionTypeModal'));
+                modal.show();
+            });
+
+            // Event listeners for question type selection
+            document.getElementById('selectMultipleChoice').addEventListener('click', function() {
+                addQuestion('multiple-choice');
+                bootstrap.Modal.getInstance(document.getElementById('questionTypeModal')).hide();
+            });
+
+            document.getElementById('selectTrueFalse').addEventListener('click', function() {
+                addQuestion('true-false');
+                bootstrap.Modal.getInstance(document.getElementById('questionTypeModal')).hide();
+            });
+
+            document.getElementById('selectShortAnswer').addEventListener('click', function() {
+                addQuestion('short-answer');
+                bootstrap.Modal.getInstance(document.getElementById('questionTypeModal')).hide();
+            });
+
+            saveExamBtn.addEventListener('click', function() {
+                const examForm = document.getElementById('examForm');
+                if (examForm.checkValidity()) {
+                    // Collect exam data
+                    const examData = {
+                        name: document.getElementById('examName').value,
+                        course: document.getElementById('examCourse').value,
+                        class: document.getElementById('examClass').value,
+                        date: document.getElementById('examDate').value,
+                        duration: document.getElementById('examDuration').value,
+                        type: document.getElementById('examType').value,
+                        lecture: document.getElementById('examLecture').value,
+                        questions: []
+                    };
+
+                    // Collect questions data
+                    const questionItems = document.querySelectorAll('.question-item');
+                    questionItems.forEach((item, index) => {
+                        const questionData = {
+                            id: index + 1,
+                            text: item.querySelector('textarea').value,
+                            type: item.querySelector('h6').textContent.includes('اختيار متعدد') ? 'multiple-choice' :
+                                  item.querySelector('h6').textContent.includes('صح/خطأ') ? 'true-false' : 'short-answer',
+                            points: parseFloat(item.querySelector('input[type="number"]').value)
+                        };
+
+                        if (questionData.type === 'multiple-choice') {
+                            questionData.options = [];
+                            const options = item.querySelectorAll('.input-group input[type="text"]');
+                            const correctIndex = item.querySelector('input[type="radio"]:checked').value;
+                            options.forEach((option, optIndex) => {
+                                questionData.options.push({
+                                    text: option.value,
+                                    isCorrect: optIndex == correctIndex
+                                });
+                            });
+                        } else if (questionData.type === 'true-false') {
+                            questionData.correctAnswer = item.querySelector('input[type="radio"]:checked').value === 'true';
+                        } else if (questionData.type === 'short-answer') {
+                            questionData.correctAnswer = item.querySelector('input[type="text"]').value;
+                        }
+
+                        examData.questions.push(questionData);
+                    });
+
+                    // Get existing exams from localStorage
+                    let exams = JSON.parse(localStorage.getItem('teacherExams')) || [];
+
+                    // Check if editing
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const editId = urlParams.get('edit');
+                    if (editId) {
+                        // Update existing exam
+                        const index = exams.findIndex(exam => exam.id == editId);
+                        if (index !== -1) {
+                            examData.id = editId;
+                            exams[index] = examData;
+                        }
+                    } else {
+                        // Add new exam
+                        examData.id = Date.now().toString(); // Simple ID generation
+                        exams.push(examData);
+                    }
+
+                    // Save to localStorage
+                    localStorage.setItem('teacherExams', JSON.stringify(exams));
+
+                    // Show success message in confirmation modal
+                    document.getElementById('confirmationModalBody').textContent = 'تم حفظ الامتحان بنجاح!';
+                    const modal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+                    modal.show();
+
+                    // Redirect to exam list after a short delay
+                    setTimeout(() => {
+                        window.location.href = 'teacher-exam-list.html';
+                    }, 2000);
+                } else {
+                    examForm.reportValidity();
+                }
+            });
+
+            // Event listener for confirm delete button
+            document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
+                const questionId = document.getElementById('confirmDeleteModal').getAttribute('data-question-id');
+                const questionItem = document.querySelector(`[data-question-id="${questionId}"]`);
+                if (questionItem) {
+                    questionItem.remove();
+                }
+                bootstrap.Modal.getInstance(document.getElementById('confirmDeleteModal')).hide();
+            });
+        });
+    </script>
+
+</html>

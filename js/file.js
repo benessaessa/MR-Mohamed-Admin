@@ -465,3 +465,191 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// Dummy data for exams
+let exams = [
+  {
+    id: 1,
+    studentName: "أحمد محمد",
+    class: "الأول الثانوي",
+    course: "تاريخ",
+    grade: 90,
+  },
+  {
+    id: 2,
+    studentName: "فاطمة علي",
+    class: "الثاني الثانوي",
+    course: "رياضيات",
+    grade: 85,
+  },
+  {
+    id: 3,
+    studentName: "محمد حسن",
+    class: "الثالث الثانوي",
+    course: "فيزياء",
+    grade: 78,
+  },
+  {
+    id: 4,
+    studentName: "سارة أحمد",
+    class: "الأول الثانوي",
+    course: "كيمياء",
+    grade: 92,
+  },
+  {
+    id: 5,
+    studentName: "علي محمود",
+    class: "الثاني الثانوي",
+    course: "تاريخ",
+    grade: 88,
+  },
+  {
+    id: 6,
+    studentName: "لينا خالد",
+    class: "الثالث الثانوي",
+    course: "رياضيات",
+    grade: 95,
+  },
+  {
+    id: 7,
+    studentName: "كريم سامي",
+    class: "الأول الثانوي",
+    course: "فيزياء",
+    grade: 80,
+  },
+  {
+    id: 8,
+    studentName: "نور حسن",
+    class: "الثاني الثانوي",
+    course: "كيمياء",
+    grade: 87,
+  },
+  {
+    id: 9,
+    studentName: "يوسف عبدالله",
+    class: "الثالث الثانوي",
+    course: "تاريخ",
+    grade: 91,
+  },
+  {
+    id: 10,
+    studentName: "مريم سالم",
+    class: "الأول الثانوي",
+    course: "رياضيات",
+    grade: 83,
+  },
+];
+
+let currentExamPage = 1;
+const examsPerPage = 5;
+let filteredExams = [...exams];
+
+// Render exams table
+function renderExamsTable() {
+  const tableBody = document.getElementById("examsTableBody");
+  if (!tableBody) return; // Only run if on exams page
+  tableBody.innerHTML = "";
+
+  const start = (currentExamPage - 1) * examsPerPage;
+  const end = start + examsPerPage;
+  const pageExams = filteredExams.slice(start, end);
+
+  pageExams.forEach((exam) => {
+    const row = `
+                    <tr>
+                        <td>${exam.studentName}</td>
+                        <td>${exam.class}</td>
+                        <td>${exam.course}</td>
+                        <td>${exam.grade}</td>
+                    </tr>
+                `;
+    tableBody.innerHTML += row;
+  });
+}
+
+// Render exams pagination
+function renderExamsPagination() {
+  const pagination = document.getElementById("examPagination");
+  if (!pagination) return; // Only run if on exams page
+  pagination.innerHTML = "";
+
+  const totalPages = Math.ceil(filteredExams.length / examsPerPage);
+
+  for (let i = 1; i <= totalPages; i++) {
+    const li = document.createElement("li");
+    li.className = `page-item ${i === currentExamPage ? "active" : ""}`;
+    li.innerHTML = `<a class="page-link" href="#" onclick="changeExamPage(${i})">${i}</a>`;
+    pagination.appendChild(li);
+  }
+}
+
+// Change exam page
+function changeExamPage(page) {
+  currentExamPage = page;
+  renderExamsTable();
+  renderExamsPagination();
+}
+
+// Filter exams
+function filterExams() {
+  const studentNameTerm = document.getElementById("studentNameFilter").value.toLowerCase();
+  const classFilter = document.getElementById("classFilter").value;
+  const courseFilter = document.getElementById("courseFilter").value;
+
+  filteredExams = exams.filter((exam) => {
+    const matchesStudentName = exam.studentName.toLowerCase().includes(studentNameTerm);
+    const matchesClass = !classFilter || exam.class === classFilter;
+    const matchesCourse = !courseFilter || exam.course === courseFilter;
+    return matchesStudentName && matchesClass && matchesCourse;
+  });
+
+  currentExamPage = 1;
+  renderExamsTable();
+  renderExamsPagination();
+}
+
+// Function to save exam
+function saveExam(examData) {
+  const newExamId = Math.max(...exams.map(e => e.id), 0) + 1;
+  const exam = {
+    id: newExamId,
+    name: examData.name,
+    course: examData.course,
+    class: examData.class,
+    date: examData.date,
+    duration: examData.duration,
+    questions: examData.questions,
+    createdAt: new Date().toISOString()
+  };
+
+  exams.push(exam);
+  console.log('Exam saved:', exam);
+  return exam;
+}
+
+// Function to get exams for a specific course and class
+function getExamsForCourse(course, className) {
+  return exams.filter(exam => exam.course === course && exam.class === className);
+}
+
+// Function to get exam by ID
+function getExamById(examId) {
+  return exams.find(exam => exam.id === examId);
+}
+
+// Event listeners for exams
+document.addEventListener("DOMContentLoaded", function () {
+  if (document.getElementById("examsTableBody")) {
+    renderExamsTable();
+    renderExamsPagination();
+
+    // Apply filter
+    const applyFilterBtn = document.getElementById("applyFilter");
+    if (applyFilterBtn) {
+      applyFilterBtn.addEventListener("click", function () {
+        filterExams();
+        bootstrap.Modal.getInstance(document.getElementById("filterModal")).hide();
+      });
+    }
+  }
+});

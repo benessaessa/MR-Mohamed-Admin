@@ -1,6 +1,7 @@
-# TODO for Adding Filter to Reports Page
+# TODO: Add Bootstrap Modal for Question Type Selection
 
-- [x] Add filter button in card header
-- [x] Add Bootstrap modal HTML with filter form
-- [x] Add data-course and data-lecture attributes to table rows
-- [x] Add JavaScript for filtering and resetting logic
+## Tasks
+- [ ] Add Bootstrap modal HTML structure for question type selection in teacher-exam-add.html
+- [ ] Update JavaScript to show modal instead of prompt when "إضافة سؤال" button is clicked
+- [ ] Add event listeners for modal buttons to add questions of selected types
+- [ ] Test the modal functionality
