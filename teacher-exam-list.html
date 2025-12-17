@@ -242,6 +242,8 @@
                             <th>اسم الامتحان</th>
                             <th>الصف</th>
                             <th>الكورس</th>
+                            <th>المحاضرة</th>
+                            <th>النشاط</th>
                             <th>الإجراءات</th>
                         </tr>
                     </thead>
@@ -410,6 +412,8 @@
                         <td>${exam.name}</td>
                         <td>${exam.class}</td>
                         <td>${exam.course}</td>
+                        <td>${exam.lecture || ''}</td>
+                        <td>${exam.type}</td>
                         <td>
                             <button class="btn btn-sm btn-outline-primary me-2" onclick="editExam('${exam.id}')">
                                 <i class="fas fa-edit"></i> تعديل
